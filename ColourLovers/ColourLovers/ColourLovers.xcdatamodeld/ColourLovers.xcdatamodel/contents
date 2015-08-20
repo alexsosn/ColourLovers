@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6251" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CLSBaseEntity" representedClassName="CLSBaseEntity" syncable="YES">
+        <attribute name="apiUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="badge" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="badgeUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="entityDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entityID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numComments" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numHearts" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numViews" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numVotes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lover" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CLSLover" inverseName="details" inverseEntity="CLSLover" syncable="YES"/>
+    </entity>
+    <entity name="CLSColor" representedClassName="CLSColor" parentEntity="CLSBaseEntity" syncable="YES">
+        <attribute name="hex" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hsv" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="rgb" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="CLSLover" representedClassName="CLSLover" syncable="YES">
+        <attribute name="apiUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="dateLastActive" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateRegistered" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numColors" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numCommentsMade" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numCommentsOnProfile" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numLovers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numPalettes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numPatterns" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CLSBaseEntity" inverseName="lover" inverseEntity="CLSBaseEntity" syncable="YES"/>
+    </entity>
+    <entity name="CLSPalette" representedClassName="CLSPalette" parentEntity="CLSBaseEntity" syncable="YES">
+        <attribute name="colors" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="CLSPattern" representedClassName="CLSPattern" parentEntity="CLSBaseEntity" syncable="YES">
+        <attribute name="colors" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="template" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CLSBaseEntity" positionX="324" positionY="-234" width="128" height="283"/>
+        <element name="CLSColor" positionX="493" positionY="207" width="128" height="88"/>
+        <element name="CLSLover" positionX="133" positionY="186" width="128" height="268"/>
+        <element name="CLSPalette" positionX="-243" positionY="0" width="128" height="58"/>
+        <element name="CLSPattern" positionX="-45" positionY="-162" width="128" height="73"/>
+    </elements>
+</model>
